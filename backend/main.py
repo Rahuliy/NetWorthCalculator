@@ -153,9 +153,19 @@ app = FastAPI(
 )
 
 # CORS for React frontend
+import os
+cors_origins = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+]
+# Allow Railway frontend domain via env var
+frontend_url = os.getenv("FRONTEND_URL", "")
+if frontend_url:
+    cors_origins.append(frontend_url)
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://127.0.0.1:3000"],
+    allow_origins=cors_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

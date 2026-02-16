@@ -27,8 +27,8 @@ class Settings:
     DATABASE_PATH: str = os.getenv("DATABASE_PATH", "networth.db")
 
     # API settings
-    API_HOST: str = os.getenv("API_HOST", "127.0.0.1")
-    API_PORT: int = int(os.getenv("API_PORT", "8000"))
+    API_HOST: str = os.getenv("API_HOST", "0.0.0.0")
+    API_PORT: int = int(os.getenv("PORT", os.getenv("API_PORT", "8000")))
 
     # Daily refresh time (24-hour format)
     DAILY_REFRESH_HOUR: int = int(os.getenv("DAILY_REFRESH_HOUR", "6"))
