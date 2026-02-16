@@ -1,0 +1,26 @@
+# Backend dependencies for NetWorthCalculator
+
+# Web framework
+fastapi==0.109.0
+uvicorn==0.27.0
+
+# Database
+sqlalchemy>=2.0.36
+
+# Plaid API
+plaid-python==22.0.0
+
+# Scheduling
+apscheduler==3.10.4
+
+# Environment variables
+python-dotenv==1.0.0
+
+# HTTP client (for Plaid)
+httpx==0.26.0
+
+# Date handling
+python-dateutil==2.8.2
+
+# CORS middleware
+starlette==0.35.1
